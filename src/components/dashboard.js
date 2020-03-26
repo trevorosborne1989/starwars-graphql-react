@@ -6,16 +6,16 @@ function Dashboard() {
   return (
   <div>
     <Navbar color="light" light expand="md">
-      <NavbarBrand href="/dashboard">dS</NavbarBrand>
+      <NavbarBrand href="/">Star Wars</NavbarBrand>
         <Nav navbar>  
           <NavItem>  
-            <NavLink href="/planets/">Planet Lore</NavLink>
+            <NavLink href="/Planets/">Planet Lore</NavLink>
           </NavItem>
           <NavItem>  
-            <NavLink href="/starships/">Starships</NavLink>
+            <NavLink href="/Starships/">Starships</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/vehicles/">Vehicles</NavLink>
+            <NavLink href="/Vehicles/">Vehicles</NavLink>
           </NavItem>
         </Nav>
     </Navbar>

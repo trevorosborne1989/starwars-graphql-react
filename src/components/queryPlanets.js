@@ -31,8 +31,9 @@ const GetPlanets =  () => (
       }
 
       const characters = (homeworld) => {
-        let person = ""
-        homeworld.residents.map(res => res.name);
+        if (homeworld.residents.map(res => res.name) == "")
+          return "No characters reside here."
+        return homeworld.residents.map(res => res.name + " | ")
       }
       
       const renderTableData = () => {

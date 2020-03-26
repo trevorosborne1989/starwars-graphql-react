@@ -6,10 +6,10 @@ import { createHttpLink } from "apollo-link-http";
 import {InMemoryCache} from 'apollo-cache-inmemory'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dashboard from './components/dashboard';
-import Planets from './components/planets';
-import Starships from './components/starships';
-import Vehicles from './components/vehicles';
+import Dashboard from './components/Dashboard';
+import Planets from './components/Planets';
+import Starships from './components/Starships';
+import Vehicles from './components/Vehicles';
 
 
 /***********Configuration**********/
@@ -27,18 +27,12 @@ const client = new ApolloClient({
 export const App = () => {
   
     return (
-
       <Router>
-        <Dashboard path="dashboard" />
-        <Projects path="projects" />
-        <Features path="features" />
-        <Releases path="releases" />
-        <Sprints path="sprints" />
-        <Tasks path="tasks" />
-        <Teams path="teams" />
-        <Work path="work" />
+        <Dashboard path="/" />
+        <Planets path="Planets" />
+        <Starships path="Starships" />
+        <Vehicles path="Vehicles" />
       </Router>
-      
   )  
 };
 
