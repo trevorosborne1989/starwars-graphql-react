@@ -1,13 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Router } from "@reach/router"
 import ApolloClient from "apollo-client";
 import { ApolloProvider } from "react-apollo";
 import { createHttpLink } from "apollo-link-http";
 import {InMemoryCache} from 'apollo-cache-inmemory'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Dashboard from './components/Dashboard';
+import Planets from './components/Planets';
+import Starships from './components/Starships';
+import Vehicles from './components/Vehicles';
+
 
 /***********Configuration**********/
 
@@ -19,6 +22,20 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+/************Main Function************/
+
+export const App = () => {
+  
+    return (
+      <Router>
+        <Dashboard path="/" />
+        <Planets path="Planets" />
+        <Starships path="Starships" />
+        <Vehicles path="Vehicles" />
+      </Router>
+  )  
+};
+
 ReactDOM.render( 
   <ApolloProvider client={client}>
     <App />
@@ -26,7 +43,3 @@ ReactDOM.render(
   document.querySelector('#root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

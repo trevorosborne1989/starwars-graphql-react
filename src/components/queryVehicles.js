@@ -4,41 +4,31 @@ import gql from 'graphql-tag';
 import { Table } from 'reactstrap';
 
 
-const GET_PLANETS = gql`
+const GET_VEHICLES = gql`
   query {
-    planets {
-      id
+    vehicles {
       name
-      residents {
-        name
-      }
+      class
     }
   }
 `
 
 
 
-const GetPlanets =  () => (
-  <Query query={GET_PLANETS}>
+const GetVehicles =  () => (
+  <Query query={GET_VEHICLES}>
     {({ loading, error, data }) => {
       if (loading) return "Loading...";
       if (error) return 'Error!';
       let n = 0
-      
-      const jakku = (val) => {
-        let num = 0
-        data.planets.map(res => res.residents.map(peo => {++num}));
-        return num;
-      }
-      
+
       const renderTableData = () => {
-        return data.planets.map(planet => (
+        return data.vehicles.map(vehicle => (
           <tbody>
             <tr>
               <th scope="row">{++n}</th>
-              <td>{planet.name}</td>
-              <td>Total residents = {jakku(planet)}</td>
-              <td>{planet.id}</td>
+              <td>{vehicle.name}</td>
+              <td>{vehicle.class}</td>
             </tr>
           </tbody>
         ))
@@ -58,4 +48,4 @@ const GetPlanets =  () => (
   </Query>
 );
 
-export default GetPlanets;
+export default GetVehicles;
