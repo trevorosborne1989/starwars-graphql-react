@@ -23,22 +23,25 @@ const GetPlanets =  () => (
     {({ loading, error, data }) => {
       if (loading) return "Loading...";
       if (error) return 'Error!';
-      let n = 0
       
-      const jakku = (val) => {
+      const population = (home) => {
         let num = 0
-        data.planets.map(res => res.residents.map(peo => {++num}));
+        home.residents.map(res => {++num});
         return num;
+      }
+
+      const characters = (homeworld) => {
+        let person = ""
+        homeworld.residents.map(res => res.name);
       }
       
       const renderTableData = () => {
         return data.planets.map(planet => (
           <tbody>
             <tr>
-              <th scope="row">{++n}</th>
               <td>{planet.name}</td>
-              <td>Total residents = {jakku(planet)}</td>
-              <td>{planet.id}</td>
+              <td>Total residents = {population(planet)}</td>
+              <td>Character Names: {characters(planet)} </td>
             </tr>
           </tbody>
         ))
@@ -48,9 +51,7 @@ const GetPlanets =  () => (
         <Table dark striped bordered hover>
           <thread>
             <tr>
-              <th>#</th>
-              <th>Planet</th>
-              <th>Residing Star Wars characters</th>
+              <th>Residing Star Wars Characters</th>
             </tr>
           </thread>
           {renderTableData()}
