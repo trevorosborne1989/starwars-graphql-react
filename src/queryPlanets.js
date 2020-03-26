@@ -49,6 +49,8 @@ const GetPlanets =  () => (
           <thread>
             <tr>
               <th>#</th>
+              <th>Planet</th>
+              <th>Residing Star Wars characters</th>
             </tr>
           </thread>
           {renderTableData()}

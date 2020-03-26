@@ -7,10 +7,10 @@ function App() {
   return (
     <div>
       <Navbar color="light" light expand="md">
-      <NavbarBrand href="/dashboard">dS</NavbarBrand>
+      <NavbarBrand href="/dashboard">Star Wars</NavbarBrand>
           <Nav navbar>  
             <NavItem>  
-              <NavLink href="/projects/">Projects</NavLink>
+              <NavLink href="/projects/">Planet Lore</NavLink>
             </NavItem>
             <NavItem>  
               <NavLink href="/features/">Features</NavLink>
@@ -32,7 +32,7 @@ function App() {
             </NavItem>
           </Nav>
       </Navbar>
-        <h2 align="center">Projects</h2>
+        <h2 align="center">Planet Lore</h2>
         <div>
           <GetPlanets />
         </div>
